@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1045993333262",
+    "project_id": "backtrackers-68569",
+    "storage_bucket": "backtrackers-68569.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1045993333262:android:7b0a92c825c2105808925f",
+        "android_client_info": {
+          "package_name": "com.example.backtracker"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9jKV1BU3EGegwMwq7cgoiQqnMlfL6OMo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
