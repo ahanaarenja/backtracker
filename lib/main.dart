@@ -1,5 +1,8 @@
 import 'dart:async';
 
+import 'package:backtracker/NavBar.dart';
+import 'package:backtracker/personal_details.dart';
+import 'package:birth_picker/birth_picker.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
@@ -9,6 +12,7 @@ import 'login.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await initializeDateFormatting();
   FirebaseApp app = await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
@@ -41,7 +45,8 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: SplashScreen()
+      home: SplashScreen(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
@@ -60,7 +65,7 @@ class SplashScreenState extends State<SplashScreen>{
     // TODO: implement initState
     super.initState();
     Timer(const Duration(seconds:2),(){
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>LoginScreen()));
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>ProvidedStylesExample()));
     });
   }
   @override
