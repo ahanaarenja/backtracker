@@ -24,19 +24,4 @@ List<Map<String, dynamic>> questionnaire = [
       "question": "Help us understand your pain type?",
       "options": ["Constant", "Comes & goes"]
     },
-    {
-    "question": "Do you feel pain in any of these areas? (Please select any one)",
-    "options": [
-      "Buttock / Thigh (backside)",
-      "Groin / Hip / Front Thigh",
-      "Calf",
-      "Knee joint",
-      "Ankle joint",
-      "Arm / Forearm / Hand",
-      "Shoulder Joint",
-      "Wrist Joint",
-      "None of the above"]
-  }
-
-
 ];

@@ -2,7 +2,10 @@
 
 import "package:backtracker/Home.dart";
 import "package:flutter/material.dart";
+import "package:font_awesome_flutter/font_awesome_flutter.dart";
 import "package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart";
+
+import "colours.dart";
 
 
 
@@ -44,78 +47,39 @@ class _ProvidedStylesExampleState extends State<ProvidedStylesExample> {
     HomeScreen(),
     HomeScreen(),
     HomeScreen(),
-    HomeScreen(),
   ];
-
-  Color? _getSecondaryItemColorForSpecificStyles() =>
-      _navBarStyle == NavBarStyle.style7 ||
-          _navBarStyle == NavBarStyle.style10 ||
-          _navBarStyle == NavBarStyle.style15 ||
-          _navBarStyle == NavBarStyle.style16 ||
-          _navBarStyle == NavBarStyle.style17 ||
-          _navBarStyle == NavBarStyle.style18
-          ? Colors.white
-          : null;
 
   List<PersistentBottomNavBarItem> _navBarsItems() => [
     PersistentBottomNavBarItem(
-      icon: const Icon(Icons.home),
+      icon: const Icon(FontAwesomeIcons.solidHome, size: 21,),
       title: "Home",
       opacity: 0.7,
-      activeColorPrimary: Colors.blue,
-      activeColorSecondary: _navBarStyle == NavBarStyle.style7 ||
-          _navBarStyle == NavBarStyle.style10
-          ? Colors.white
-          : null,
-      inactiveColorPrimary: Colors.grey,
+      activeColorPrimary: dark,
+      inactiveColorPrimary: mid,
       scrollController: _scrollControllers.first,
     ),
     PersistentBottomNavBarItem(
-      icon: const Icon(Icons.search),
-      title: "Search",
-      activeColorPrimary: Colors.teal,
-      activeColorSecondary: _navBarStyle == NavBarStyle.style7 ||
-          _navBarStyle == NavBarStyle.style10
-          ? Colors.white
-          : null,
-      inactiveColorPrimary: Colors.grey,
+      icon: const Icon(FontAwesomeIcons.dumbbell, size: 21,),
+      title: "Exercises",
+      activeColorPrimary: dark,
+      inactiveColorPrimary: mid,
     ),
     PersistentBottomNavBarItem(
-      icon: const Icon(Icons.add),
+      icon: const Icon(FontAwesomeIcons.chartLine, size: 21,),
       title: "Add",
-      activeColorPrimary: Colors.blueAccent,
-      inactiveColorPrimary: Colors.grey,
-      activeColorSecondary: _getSecondaryItemColorForSpecificStyles(),
+      activeColorPrimary: dark,
+      inactiveColorPrimary: mid,
     ),
     PersistentBottomNavBarItem(
-      icon: const Icon(Icons.message),
-      title: "Messages",
-      activeColorPrimary: Colors.deepOrange,
-      inactiveColorPrimary: Colors.grey,
-      activeColorSecondary: _navBarStyle == NavBarStyle.style7 ||
-          _navBarStyle == NavBarStyle.style10
-          ? Colors.white
-          : null,
-    ),
-    PersistentBottomNavBarItem(
-      icon: const Icon(Icons.settings),
-      title: "Settings",
-      activeColorPrimary: Colors.indigo,
-      inactiveColorPrimary: Colors.grey,
-      activeColorSecondary: _navBarStyle == NavBarStyle.style7 ||
-          _navBarStyle == NavBarStyle.style10
-          ? Colors.white
-          : null,
-      scrollController: _scrollControllers.last,
+      icon: const Icon(FontAwesomeIcons.solidUser, size: 21,),
+      title: "Profile",
+      activeColorPrimary: dark,
+      inactiveColorPrimary: mid,
     ),
   ];
 
   @override
   Widget build(final BuildContext context) => Scaffold(
-    appBar: AppBar(
-      title: const Text("Navigation Bar Demo"),
-      backgroundColor: Colors.grey.shade900,
-    ),
     drawer: const Drawer(
       child: Center(
         child: Column(
@@ -141,18 +105,6 @@ class _ProvidedStylesExampleState extends State<ProvidedStylesExample> {
         scrollControllers: _scrollControllers,
       ),
       padding: const EdgeInsets.only(top: 8),
-      floatingActionButton: IconButton(
-        icon: Container(
-          padding: const EdgeInsets.all(12),
-          decoration: const BoxDecoration(
-              shape: BoxShape.circle, color: Colors.orange),
-          child: const Icon(
-            Icons.add,
-            color: Colors.white,
-          ),
-        ),
-        onPressed: () {},
-      ),
       onWillPop: (final context) async {
         await showDialog(
           context: context ?? this.context,
@@ -171,20 +123,12 @@ class _ProvidedStylesExampleState extends State<ProvidedStylesExample> {
         );
         return false;
       },
-      backgroundColor: Colors.grey.shade900,
       isVisible: !_hideNavBar,
       animationSettings: const NavBarAnimationSettings(
         navBarItemAnimation: ItemAnimationSettings(
           // Navigation Bar's items animation properties.
           duration: Duration(milliseconds: 400),
           curve: Curves.ease,
-        ),
-        screenTransitionAnimation: ScreenTransitionAnimationSettings(
-          // Screen transition animation on change of selected tab.
-          animateTabTransition: true,
-          duration: Duration(milliseconds: 300),
-          screenTransitionAnimationType:
-          ScreenTransitionAnimationType.fadeIn,
         ),
         onNavBarHideAnimation: OnHideAnimationSettings(
           duration: Duration(milliseconds: 100),
@@ -195,84 +139,6 @@ class _ProvidedStylesExampleState extends State<ProvidedStylesExample> {
       navBarHeight: kBottomNavigationBarHeight,
       navBarStyle:
       _navBarStyle, // Choose the nav bar style with this property
-    ),
-  );
-}
-
-// ----------------------------------------- Custom Style ----------------------------------------- //
-
-class CustomNavBarWidget extends StatelessWidget {
-  const CustomNavBarWidget(
-      this.items, {
-        required this.selectedIndex,
-        required this.onItemSelected,
-        final Key? key,
-      }) : super(key: key);
-  final int selectedIndex;
-  // List<PersistentBottomNavBarItem> is just for example here. It can be anything you want like List<YourItemWidget>
-  final List<PersistentBottomNavBarItem> items;
-  final ValueChanged<int> onItemSelected;
-
-  Widget _buildItem(
-      final PersistentBottomNavBarItem item, final bool isSelected) =>
-      Container(
-        alignment: Alignment.center,
-        height: kBottomNavigationBarHeight,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            Flexible(
-              child: IconTheme(
-                data: IconThemeData(
-                    size: 26,
-                    color: isSelected
-                        ? (item.activeColorSecondary ?? item.activeColorPrimary)
-                        : item.inactiveColorPrimary ?? item.activeColorPrimary),
-                child: isSelected ? item.icon : item.inactiveIcon ?? item.icon,
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 5),
-              child: Material(
-                type: MaterialType.transparency,
-                child: FittedBox(
-                    child: Text(
-                      item.title ?? "",
-                      style: TextStyle(
-                          color: isSelected
-                              ? (item.activeColorSecondary ??
-                              item.activeColorPrimary)
-                              : item.inactiveColorPrimary,
-                          fontWeight: FontWeight.w400,
-                          fontSize: 12),
-                    )),
-              ),
-            )
-          ],
-        ),
-      );
-
-  @override
-  Widget build(final BuildContext context) => Container(
-    color: Colors.grey.shade900,
-    child: SizedBox(
-      width: double.infinity,
-      height: kBottomNavigationBarHeight,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: items.map((final item) {
-          final int index = items.indexOf(item);
-          return Flexible(
-            child: GestureDetector(
-              onTap: () {
-                onItemSelected(index);
-              },
-              child: _buildItem(item, selectedIndex == index),
-            ),
-          );
-        }).toList(),
-      ),
     ),
   );
 }
