@@ -1,4 +1,5 @@
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
+import 'package:backtracker/pain_assessment.dart';
 import 'package:backtracker/personal_details.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_rich_text/easy_rich_text.dart';
@@ -69,7 +70,9 @@ class HomeScreenState extends State<HomeScreen>{
                     ),
                     SizedBox(height: 20,),
                     IconButton(
-                        onPressed: (){},
+                        onPressed: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=> PainAssessment()));
+                        },
                         icon: Icon(Icons.arrow_forward, fontWeight: FontWeight.w900, color: dark,)
                     )
                   ],
