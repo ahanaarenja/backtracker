@@ -6,6 +6,7 @@ import "package:font_awesome_flutter/font_awesome_flutter.dart";
 import "package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart";
 
 import "colours.dart";
+import "exercises.dart";
 
 
 
@@ -44,7 +45,7 @@ class _NavBarState extends State<NavBar> {
 
   List<Widget> _buildScreens() => [
     HomeScreen(),
-    HomeScreen(),
+    Exercises(),
     HomeScreen(),
     HomeScreen(),
   ];
