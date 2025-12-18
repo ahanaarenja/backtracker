@@ -8,10 +8,6 @@ import "package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart";
 import "colours.dart";
 import "exercises.dart";
 
-
-
-// ----------------------------------------- Provided Style ----------------------------------------- //
-
 class NavBar extends StatefulWidget {
 
   @override
@@ -31,7 +27,7 @@ class _NavBarState extends State<NavBar> {
   @override
   void initState() {
     super.initState();
-    _controller = PersistentTabController(initialIndex: 1);
+    _controller = PersistentTabController(initialIndex: 0);
     _hideNavBar = false;
   }
 

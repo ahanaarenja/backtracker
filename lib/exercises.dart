@@ -51,12 +51,24 @@ class ExercisesState extends State<Exercises>{
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("Complete your pain assessment first"),
+                  Image.asset("assets/assessment.png", width: 100, height: 100, color: mid,),
+                  SizedBox(height: 20,),
+                  Text("Complete your pain assessment first", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),),
+                  SizedBox(height: 20,),
                   ElevatedButton(
                     onPressed: () {
                       Navigator.push(context, MaterialPageRoute(builder: (context)=>PainAssessment()));
                     },
-                    child: Text("Take Assessment"),
+                    child: Text("Take Assessment", style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16, color: Colors.white),),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: dark,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(25),
+                      ),
+
+                      minimumSize: const Size(200, 40),
+                      // textStyle: TextStyle(fontSize: 14),
+                    ),
                   ),
                 ],
               ),
@@ -225,7 +237,7 @@ class ExercisesState extends State<Exercises>{
                       ),
                     ),
                   ),
-                  SizedBox(width: 40,),
+                  SizedBox(width: 30,),
                   Expanded(
                     child: Container(
                       padding: EdgeInsets.symmetric(vertical: 5),

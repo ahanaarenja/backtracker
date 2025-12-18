@@ -193,7 +193,7 @@ class PainAssessmentState extends State<PainAssessment>{
       try {
 
           final response = await http.post(
-            Uri.parse('http://192.168.0.205:8080/check_diagnosis'),
+            Uri.parse('http://192.168.0.154:8080/check_diagnosis'),
             headers: {'Content-Type': 'application/json'},
             body: jsonEncode({
               'Pain location': assessmentAnswers[0],
@@ -297,7 +297,7 @@ class PainAssessmentState extends State<PainAssessment>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: (loading)? AppBar() : AppBar(
+      appBar: (loading)? AppBar(automaticallyImplyLeading: false,) : AppBar(
         backgroundColor: Colors.white,
         automaticallyImplyLeading: false,
         toolbarHeight: 100,
@@ -334,7 +334,7 @@ class PainAssessmentState extends State<PainAssessment>{
         Center(
           child: Center(
             child: Image.asset(
-              "assets/sending_mails.gif",
+              "assets/processing.gif",
               width: 300,
             ),
           ),
