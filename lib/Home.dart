@@ -8,6 +8,7 @@ import 'package:easy_rich_text/easy_rich_text.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:super_tooltip/super_tooltip.dart';
 import 'package:validation_textformfield/validation_textformfield.dart';
 
@@ -162,7 +163,22 @@ class HomeScreenState extends State<HomeScreen>{
   Widget guideCard(data){
     return GestureDetector(
       onTap: () async {
-
+        showMaterialModalBottomSheet(
+          context: context,
+          builder: (context) {
+            return Container(
+              height: 200,
+              margin: EdgeInsets.fromLTRB(20, 20, 20, 100),
+              child: Column(
+                children: [
+                  Image.asset(data["image"],height: 120,),
+                  SizedBox(height: 20,),
+                  Text(data["text"], textAlign: TextAlign.center,),
+                ],
+              ),
+            );
+          }
+        );
       },
       child: Container(
         width: 150,
