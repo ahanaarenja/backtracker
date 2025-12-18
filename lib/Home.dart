@@ -172,7 +172,7 @@ class HomeScreenState extends State<HomeScreen>{
               child: Column(
                 children: [
                   Image.asset(data["image"],height: 120,),
-                  SizedBox(height: 20,),
+                  SizedBox(height:20,),
                   Text(data["text"], textAlign: TextAlign.center,),
                 ],
               ),
