@@ -1,5 +1,6 @@
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:backtracker/exercise_db.dart';
+import 'package:backtracker/exerciseDetails.dart';
 import 'package:backtracker/guidebook_db.dart';
 import 'package:backtracker/pain_assessment.dart';
 import 'package:backtracker/personal_details.dart';
@@ -9,8 +10,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
-import 'package:super_tooltip/super_tooltip.dart';
-import 'package:validation_textformfield/validation_textformfield.dart';
 
 import 'colours.dart';
 import 'login.dart';
@@ -80,7 +79,7 @@ class HomeScreenState extends State<HomeScreen>{
                     SizedBox(height: 10,),
                     IconButton(
                         onPressed: (){
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=> PainAssessment()));
+                          Navigator.of(context, rootNavigator: true).push(MaterialPageRoute(builder: (context)=> PainAssessment()));
                         },
                         icon: Icon(FontAwesomeIcons.arrowRight, fontWeight: FontWeight.w900, color: dark,)
                     ),
@@ -130,33 +129,42 @@ class HomeScreenState extends State<HomeScreen>{
   }
 
   Widget exerciseCardHome(data){
-    return Column(
-      children: [
-        Container(
-            width: 150,
-            height: 155,
-            margin: EdgeInsets.only(right: 10),
-            padding: EdgeInsets.only(bottom: 5),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              border: Border.all(),
-              borderRadius: BorderRadius.circular(20)
-            ),
-            child: Column(
-              children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(20),
-                  child: Image.asset(data["image"], height: 100,)
-                ),
-                SizedBox(height: 5,),
-                Text(data["name"],
-                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700,),
-                  textAlign: TextAlign.center,
-                )
-              ],
-            ),
+    return GestureDetector(
+      onTap: () {
+        Navigator.of(context, rootNavigator: true).push(
+          MaterialPageRoute(
+            builder: (context) => ExerciseDetails(data: data),
           ),
-      ],
+        );
+      },
+      child: Column(
+        children: [
+          Container(
+              width: 150,
+              height: 155,
+              margin: EdgeInsets.only(right: 10),
+              padding: EdgeInsets.only(bottom: 5),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                border: Border.all(),
+                borderRadius: BorderRadius.circular(20)
+              ),
+              child: Column(
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(20),
+                    child: Image.asset(data["image"], height: 100,)
+                  ),
+                  SizedBox(height: 5,),
+                  Text(data["name"],
+                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700,),
+                    textAlign: TextAlign.center,
+                  )
+                ],
+              ),
+            ),
+        ],
+      ),
     );
   }
 

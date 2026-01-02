@@ -114,52 +114,54 @@ class PainAssessmentState extends State<PainAssessment>{
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Container(
-            width: double.infinity,
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(uniqueValuesByQuestion[_currentQuestionIndex]["question"],
-                  style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
-                ),
-                SizedBox(height: 10,),
-                Column(
-                  children:
-                    uniqueValuesByQuestion[_currentQuestionIndex]["options"].asMap().entries.map<Widget>((entry) {
-                      int index = entry.key;
-                      String i = entry.value;
-                      print(index);
-                     return Padding(
-                       padding:(index%2==0) ? EdgeInsets.only(right: 40, bottom: 20) : EdgeInsets.only(left:40, bottom: 20),
-                       child: ElevatedButton(
-                         onPressed: (){
-                           setState(() {
-                             if(!answered.contains(true) || answered[index]) {
-                               answered[index] = !answered[index];
-                               assessmentAnswers[_currentQuestionIndex] = i;
-                             }
-                           });
-                         },
-                         child: Text(i, style: TextStyle(color: Colors.white, fontSize: 15, fontWeight: FontWeight.w600),),
-                         style: ElevatedButton.styleFrom(
-                           backgroundColor: (answered[index]) ? dark : mid,
-                           shape: RoundedRectangleBorder(
-                             borderRadius: BorderRadius.circular(25),
-                           ),
+          Expanded(
+            child: Container(
+              width: double.infinity,
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(uniqueValuesByQuestion[_currentQuestionIndex]["question"],
+                    style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
+                  ),
+                  SizedBox(height: 10,),
+                  Column(
+                    children:
+                      uniqueValuesByQuestion[_currentQuestionIndex]["options"].asMap().entries.map<Widget>((entry) {
+                        int index = entry.key;
+                        String i = entry.value;
+                        print(index);
+                       return Padding(
+                         padding:(index%2==0) ? EdgeInsets.only(right: 40, bottom: 20) : EdgeInsets.only(left:40, bottom: 20),
+                         child: ElevatedButton(
+                           onPressed: (){
+                             setState(() {
+                               if(!answered.contains(true) || answered[index]) {
+                                 answered[index] = !answered[index];
+                                 assessmentAnswers[_currentQuestionIndex] = i;
+                               }
+                             });
+                           },
+                           child: Text(i, style: TextStyle(color: Colors.white, fontSize: 15, fontWeight: FontWeight.w600),),
+                           style: ElevatedButton.styleFrom(
+                             backgroundColor: (answered[index]) ? dark : mid,
+                             shape: RoundedRectangleBorder(
+                               borderRadius: BorderRadius.circular(25),
+                             ),
 
-                           minimumSize: const Size(double.infinity, 40),
-                           // textStyle: TextStyle(fontSize: 14),
+                             minimumSize: const Size(double.infinity, 40),
+                             // textStyle: TextStyle(fontSize: 14),
+                           ),
                          ),
-                       ),
-                     );
-                   }).toList(),
-                ),
-              ],
+                       );
+                     }).toList(),
+                  ),
+                ],
+              ),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(bottom: 150),
+            padding: const EdgeInsets.only(bottom: 70),
             child: ElevatedButton(
               onPressed: (){
                 if(answered.contains(true)) {
@@ -193,7 +195,7 @@ class PainAssessmentState extends State<PainAssessment>{
       try {
 
           final response = await http.post(
-            Uri.parse('http://192.168.0.154:8080/check_diagnosis'),
+            Uri.parse('https://backtracker-1045993333262.asia-south1.run.app/check_diagnosis'),
             headers: {'Content-Type': 'application/json'},
             body: jsonEncode({
               'Pain location': assessmentAnswers[0],

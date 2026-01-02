@@ -1,6 +1,8 @@
 // ignore_for_file: avoid_redundant_argument_values
 
 import "package:backtracker/Home.dart";
+import "package:backtracker/profile.dart";
+import "package:backtracker/progress_screen.dart";
 import "package:flutter/material.dart";
 import "package:font_awesome_flutter/font_awesome_flutter.dart";
 import "package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart";
@@ -42,8 +44,8 @@ class _NavBarState extends State<NavBar> {
   List<Widget> _buildScreens() => [
     HomeScreen(),
     Exercises(),
-    HomeScreen(),
-    HomeScreen(),
+    const ProgressScreen(),
+    ProfileScreen(),
   ];
 
   List<PersistentBottomNavBarItem> _navBarsItems() => [
@@ -63,7 +65,7 @@ class _NavBarState extends State<NavBar> {
     ),
     PersistentBottomNavBarItem(
       icon: const Icon(FontAwesomeIcons.chartLine, size: 21,),
-      title: "Add",
+      title: "Progress",
       activeColorPrimary: dark,
       inactiveColorPrimary: mid,
     ),

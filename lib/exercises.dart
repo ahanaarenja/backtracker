@@ -1,4 +1,5 @@
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
+import 'package:backtracker/exerciseDetails.dart';
 import 'package:backtracker/pain_assessment.dart';
 import 'package:backtracker/personal_details.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -57,7 +58,7 @@ class ExercisesState extends State<Exercises>{
                   SizedBox(height: 20,),
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>PainAssessment()));
+                      Navigator.of(context, rootNavigator: true).push(MaterialPageRoute(builder: (context)=>PainAssessment()));
                     },
                     child: Text("Take Assessment", style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16, color: Colors.white),),
                     style: ElevatedButton.styleFrom(
@@ -163,105 +164,110 @@ class ExercisesState extends State<Exercises>{
   }
 
   Widget exerciseCard(index, data){
-    return Container(
-      margin: EdgeInsets.only(bottom: 20),
-        padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-        decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(20),
-            border: Border.all()
-        ),
-        child: Column(
-          children: [
-            Row(
-              children: [
-                Container(
-                  padding : EdgeInsets.symmetric(horizontal: 12, vertical: 5),
-                  decoration: BoxDecoration(
-                      color: mid,
-                      borderRadius: BorderRadius.circular(50)
-                  ),
-                  child: Text("$index", style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700, fontSize: 16),),
-                ),
-                Expanded(
-                    child: Text("${data["name"]}",
-                      style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
-                      textAlign: TextAlign.center,
-                    )
-                ),
-              ],
-            ),
-            SizedBox(height: 15,),
-            Container(
-              height: 150,
-              decoration: BoxDecoration(
-                // color: mid,
-                border: Border.all(),
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: ClipRRect(
-                borderRadius: BorderRadiusGeometry.circular(20),
-                  child: Image.asset(data["image"])
-              ),
-            ),
-            SizedBox(height: 15,),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 7),
-              child: Text("${data["whatItHelps"]}",
-                style: TextStyle(),
-                textAlign: TextAlign.center,
-              ),
-            ),
-            SizedBox(height: 15,),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    return GestureDetector(
+      onTap: (){
+        Navigator.of(context, rootNavigator: true).push(MaterialPageRoute(builder: (context)=>ExerciseDetails(data: data,)));
+      },
+      child: Container(
+        margin: EdgeInsets.only(bottom: 20),
+          padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+          decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(20),
+              border: Border.all()
+          ),
+          child: Column(
+            children: [
+              Row(
                 children: [
-                  Expanded(
-                    child: Container(
-                      padding: EdgeInsets.symmetric(vertical: 5),
-                      decoration: BoxDecoration(
-                          color: dark,
-                          borderRadius: BorderRadius.circular(10)
-                      ),
-                      child: Column(
-                        children: [
-                          Text("reps",
-                            style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: Colors.white),
-                          ),
-                          Text("${data["reps"]}",
-                            style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, color: Colors.white),
-                          ),
-                        ],
-                      ),
+                  Container(
+                    padding : EdgeInsets.symmetric(horizontal: 12, vertical: 5),
+                    decoration: BoxDecoration(
+                        color: mid,
+                        borderRadius: BorderRadius.circular(50)
                     ),
+                    child: Text("$index", style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700, fontSize: 16),),
                   ),
-                  SizedBox(width: 30,),
                   Expanded(
-                    child: Container(
-                      padding: EdgeInsets.symmetric(vertical: 5),
-                      decoration: BoxDecoration(
-                          color: dark,
-                          borderRadius: BorderRadius.circular(10)
-                      ),
-                      child: Column(
-                        children: [
-                          Text("sets",
-                            style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: Colors.white),
-                          ),
-                          Text("${data["sets"]}",
-                            style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, color: Colors.white),
-                          ),
-                        ],
-                      ),
-                    ),
-                  )
+                      child: Text("${data["name"]}",
+                        style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
+                        textAlign: TextAlign.center,
+                      )
+                  ),
                 ],
               ),
-            )
-          ],
-        )
+              SizedBox(height: 15,),
+              Container(
+                height: 150,
+                decoration: BoxDecoration(
+                  // color: mid,
+                  border: Border.all(),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadiusGeometry.circular(20),
+                    child: Image.asset(data["image"])
+                ),
+              ),
+              SizedBox(height: 15,),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 7),
+                child: Text("${data["whatItHelps"]}",
+                  style: TextStyle(),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              SizedBox(height: 15,),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 30),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Expanded(
+                      child: Container(
+                        padding: EdgeInsets.symmetric(vertical: 5),
+                        decoration: BoxDecoration(
+                            color: dark,
+                            borderRadius: BorderRadius.circular(10)
+                        ),
+                        child: Column(
+                          children: [
+                            Text("reps",
+                              style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: Colors.white),
+                            ),
+                            Text("${data["reps"]}",
+                              style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, color: Colors.white),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 30,),
+                    Expanded(
+                      child: Container(
+                        padding: EdgeInsets.symmetric(vertical: 5),
+                        decoration: BoxDecoration(
+                            color: dark,
+                            borderRadius: BorderRadius.circular(10)
+                        ),
+                        child: Column(
+                          children: [
+                            Text("sets",
+                              style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: Colors.white),
+                            ),
+                            Text("${data["sets"]}",
+                              style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, color: Colors.white),
+                            ),
+                          ],
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              )
+            ],
+          )
+      ),
     );
   }
   

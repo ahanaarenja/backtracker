@@ -38,12 +38,21 @@ dependencies:
   font_awesome_flutter:
   awesome_snackbar_content:
   easy_rich_text:
-  url_launcher:
   firebase_core:
   firebase_auth:
   cloud_firestore:
   birth_picker: ^1.1.1
   persistent_bottom_nav_bar:
+  modal_bottom_sheet: ^3.0.0
+  youtube_player_flutter:
+  intl:
+  camera: ^0.11.0+2
+  google_mlkit_pose_detection: ^0.12.0
+  permission_handler: ^11.3.1
+  pdf: ^3.10.8
+  share_plus: ^10.0.0
+  flutter_blue_plus: ^1.32.9
+  path_provider: ^2.1.3
 
 dev_dependencies:
   flutter_test:

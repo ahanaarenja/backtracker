@@ -12,6 +12,8 @@ final Map<String, dynamic> diagnosisExercises = {
       ],
       "reps": "10–12",
       "sets": "2–3",
+      "link": "https://www.youtube.com/watch?v=WtilA9IJX1c",
+      "strapNeeded": true,
     },
     {
       "name": "Side Plank Holds",
@@ -25,6 +27,8 @@ final Map<String, dynamic> diagnosisExercises = {
       ],
       "reps": "Hold 15–30 sec",
       "sets": "2 per side",
+      "link": "https://www.youtube.com/watch?v=BhWGMc_JfXM",
+      "strapNeeded": true,
     },
     {
       "name": "Bird Dog",
@@ -38,6 +42,8 @@ final Map<String, dynamic> diagnosisExercises = {
       ],
       "reps": "8–10 per side",
       "sets": "2",
+      "link": "https://www.youtube.com/shorts/wh2spJeDDQs",
+      "strapNeeded": true,
     },
     {
       "name": "Squats",
@@ -51,6 +57,8 @@ final Map<String, dynamic> diagnosisExercises = {
       ],
       "reps": "8–12",
       "sets": "2",
+      "link": "https://www.youtube.com/shorts/eFEVKmp3M4g",
+      "strapNeeded": true,
     },
     {
       "name": "Dead Bug",
@@ -64,6 +72,8 @@ final Map<String, dynamic> diagnosisExercises = {
       ],
       "reps": "8–10 per side",
       "sets": "2",
+      "link": "https://www.youtube.com/watch?v=g_BYB0R-4Ws",
+      "strapNeeded": false,
     },
   ],
 
@@ -80,6 +90,8 @@ final Map<String, dynamic> diagnosisExercises = {
       ],
       "reps": "8–10 cycles",
       "sets": "1–2",
+      "link": "https://www.youtube.com/shorts/WHUevrqeKIg",
+      "strapNeeded": true,
     },
     {
       "name": "Thoracic Rotation Stretch",
@@ -93,6 +105,8 @@ final Map<String, dynamic> diagnosisExercises = {
       ],
       "reps": "6–8 per side",
       "sets": "2",
+      "link": "https://www.youtube.com/watch?v=MfUx9FCOb1E",
+      "strapNeeded": true,
     },
     {
       "name": "Doorway Chest-Opening Stretch",
@@ -106,6 +120,8 @@ final Map<String, dynamic> diagnosisExercises = {
       ],
       "reps": "Hold 20–30 sec",
       "sets": "2–3",
+      "link": "https://www.youtube.com/shorts/Eyk0cbGKkYg",
+      "strapNeeded": true,
     },
     {
       "name": "Scapular Retraction (Band Pulls)",
@@ -119,6 +135,8 @@ final Map<String, dynamic> diagnosisExercises = {
       ],
       "reps": "10–15",
       "sets": "2",
+      "link": "https://www.youtube.com/watch?v=6XGUXfVKdwI",
+      "strapNeeded": true,
     },
     {
       "name": "Foam Roller Thoracic Extension",
@@ -132,6 +150,8 @@ final Map<String, dynamic> diagnosisExercises = {
       ],
       "reps": "8–10",
       "sets": "1–2",
+      "link": "https://www.youtube.com/watch?v=gCNmsijJdFY&t=17s",
+      "strapNeeded": false,
     },
   ],
 
@@ -148,6 +168,8 @@ final Map<String, dynamic> diagnosisExercises = {
       ],
       "reps": "8–10",
       "sets": "2",
+      "link": "https://www.youtube.com/watch?v=4DgM17tIwtw",
+      "strapNeeded": true,
     },
     {
       "name": "Scapular Retraction (Band Pulls)",
@@ -161,6 +183,8 @@ final Map<String, dynamic> diagnosisExercises = {
       ],
       "reps": "10–15",
       "sets": "2",
+      "link": "https://www.youtube.com/watch?v=6XGUXfVKdwI",
+      "strapNeeded": true,
     },
     {
       "name": "Thoracic Rotation Stretch",
@@ -174,6 +198,8 @@ final Map<String, dynamic> diagnosisExercises = {
       ],
       "reps": "6–8 per side",
       "sets": "2",
+      "link": "https://www.youtube.com/watch?v=MfUx9FCOb1E",
+      "strapNeeded": true,
     },
     {
       "name": "Doorway Chest-Opening Stretch",
@@ -187,6 +213,8 @@ final Map<String, dynamic> diagnosisExercises = {
       ],
       "reps": "Hold 20–30 sec",
       "sets": "2–3",
+      "link": "https://www.youtube.com/shorts/Eyk0cbGKkYg",
+      "strapNeeded": true,
     },
     {
       "name": "Prone Cobra",
@@ -200,6 +228,8 @@ final Map<String, dynamic> diagnosisExercises = {
       ],
       "reps": "Hold 5–10 sec",
       "sets": "6–8 reps",
+      "link": "https://www.youtube.com/watch?v=hcTILl3cVkQ&t=46s",
+      "strapNeeded": true,
     },
   ],
 
@@ -216,6 +246,8 @@ final Map<String, dynamic> diagnosisExercises = {
       ],
       "reps": "8–10",
       "sets": "2",
+      "link": "https://www.youtube.com/watch?v=vhFGQxDVzF8",
+      "strapNeeded": false,
     },
     {
       "name": "Neck Rotation & Side-Tilt Stretches",
@@ -229,6 +261,8 @@ final Map<String, dynamic> diagnosisExercises = {
       ],
       "reps": "Hold 15–20 sec",
       "sets": "2 per direction",
+      "link": "https://www.youtube.com/watch?v=54y0JAT46vE",
+      "strapNeeded": false,
     },
     {
       "name": "Side Neck Isometric Holds",
@@ -242,6 +276,8 @@ final Map<String, dynamic> diagnosisExercises = {
       ],
       "reps": "Hold 5–8 sec",
       "sets": "5 per side",
+      "link": "https://www.youtube.com/watch?v=3Owy1hurobA",
+      "strapNeeded": false,
     },
     {
       "name": "Shoulder Blade Squeezes",
@@ -255,6 +291,8 @@ final Map<String, dynamic> diagnosisExercises = {
       ],
       "reps": "10-12",
       "sets": "2",
+      "link": "https://www.youtube.com/watch?v=QN1oZVMMRjE",
+      "strapNeeded": true,
     },
     {
       "name": "Doorway Chest-Opening Stretch",
@@ -268,6 +306,8 @@ final Map<String, dynamic> diagnosisExercises = {
       ],
       "reps": "Hold 20–30 sec",
       "sets": "2–3",
+      "link": "https://www.youtube.com/shorts/Eyk0cbGKkYg",
+      "strapNeeded": true,
     },
   ],
 };
@@ -285,6 +325,8 @@ final List<Map<String, dynamic>> allExercises = [
     ],
     "reps": "10–12",
     "sets": "2–3",
+    "link": "https://www.youtube.com/watch?v=WtilA9IJX1c",
+    "strapNeeded": true,
   },
   {
     "name": "Side Plank Holds",
@@ -298,6 +340,8 @@ final List<Map<String, dynamic>> allExercises = [
     ],
     "reps": "Hold 15–30 sec",
     "sets": "2 per side",
+    "link": "https://www.youtube.com/watch?v=BhWGMc_JfXM",
+    "strapNeeded": true,
   },
   {
     "name": "Bird Dog",
@@ -311,6 +355,8 @@ final List<Map<String, dynamic>> allExercises = [
     ],
     "reps": "8–10 per side",
     "sets": "2",
+    "link": "https://www.youtube.com/shorts/wh2spJeDDQs",
+    "strapNeeded": true,
   },
   {
     "name": "Squats",
@@ -324,6 +370,8 @@ final List<Map<String, dynamic>> allExercises = [
     ],
     "reps": "8–12",
     "sets": "2",
+    "link": "https://www.youtube.com/shorts/eFEVKmp3M4g",
+    "strapNeeded": true,
   },
   {
     "name": "Dead Bug",
@@ -337,6 +385,8 @@ final List<Map<String, dynamic>> allExercises = [
     ],
     "reps": "8–10 per side",
     "sets": "2",
+    "link": "https://www.youtube.com/watch?v=g_BYB0R-4Ws",
+    "strapNeeded": false,
   },
   {
     "name": "Cat–Cow Pose",
@@ -350,6 +400,8 @@ final List<Map<String, dynamic>> allExercises = [
     ],
     "reps": "8–10 cycles",
     "sets": "1–2",
+    "link": "https://www.youtube.com/shorts/WHUevrqeKIg",
+    "strapNeeded": true,
   },
   {
     "name": "Thoracic Rotation Stretch",
@@ -363,6 +415,8 @@ final List<Map<String, dynamic>> allExercises = [
     ],
     "reps": "6–8 per side",
     "sets": "2",
+    "link": "https://www.youtube.com/watch?v=MfUx9FCOb1E",
+    "strapNeeded": true,
   },
   {
     "name": "Doorway Chest-Opening Stretch",
@@ -376,6 +430,8 @@ final List<Map<String, dynamic>> allExercises = [
     ],
     "reps": "Hold 20–30 sec",
     "sets": "2–3",
+    "link": "https://www.youtube.com/shorts/Eyk0cbGKkYg",
+    "strapNeeded": true,
   },
   {
     "name": "Scapular Retraction (Band Pulls)",
@@ -389,6 +445,8 @@ final List<Map<String, dynamic>> allExercises = [
     ],
     "reps": "10–15",
     "sets": "2",
+    "link": "https://www.youtube.com/watch?v=6XGUXfVKdwI",
+    "strapNeeded": true,
   },
   {
     "name": "Foam Roller Thoracic Extension",
@@ -402,6 +460,8 @@ final List<Map<String, dynamic>> allExercises = [
     ],
     "reps": "8–10",
     "sets": "1–2",
+    "link": "https://www.youtube.com/watch?v=gCNmsijJdFY&t=17s",
+    "strapNeeded": false,
   },
   {
     "name": "Thoracic Extension on Chair",
@@ -415,6 +475,8 @@ final List<Map<String, dynamic>> allExercises = [
     ],
     "reps": "8–10",
     "sets": "2",
+    "link": "https://www.youtube.com/watch?v=4DgM17tIwtw",
+    "strapNeeded": true,
   },
   {
     "name": "Prone Cobra",
@@ -428,6 +490,8 @@ final List<Map<String, dynamic>> allExercises = [
     ],
     "reps": "Hold 5–10 sec",
     "sets": "6–8 reps",
+    "link": "https://www.youtube.com/watch?v=hcTILl3cVkQ&t=46s",
+    "strapNeeded": true,
   },
   {
     "name": "Chin Tucks (Cervical Retraction)",
@@ -441,6 +505,8 @@ final List<Map<String, dynamic>> allExercises = [
     ],
     "reps": "8–10",
     "sets": "2",
+    "link": "https://www.youtube.com/watch?v=vhFGQxDVzF8",
+    "strapNeeded": false,
   },
   {
     "name": "Neck Rotation & Side-Tilt Stretches",
@@ -454,6 +520,8 @@ final List<Map<String, dynamic>> allExercises = [
     ],
     "reps": "Hold 15–20 sec",
     "sets": "2 per direction",
+    "link": "https://www.youtube.com/watch?v=54y0JAT46vE",
+    "strapNeeded": false,
   },
   {
     "name": "Side Neck Isometric Holds",
@@ -467,6 +535,8 @@ final List<Map<String, dynamic>> allExercises = [
     ],
     "reps": "Hold 5–8 sec",
     "sets": "5 per side",
+    "link": "https://www.youtube.com/watch?v=3Owy1hurobA",
+    "strapNeeded": false,
   },
   {
     "name": "Shoulder Blade Squeezes",
@@ -480,5 +550,7 @@ final List<Map<String, dynamic>> allExercises = [
     ],
     "reps": "10–12",
     "sets": "2",
+    "link": "https://www.youtube.com/watch?v=QN1oZVMMRjE",
+    "strapNeeded": true,
   },
 ];

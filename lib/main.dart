@@ -14,7 +14,7 @@ import 'login.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await initializeDateFormatting();
-  FirebaseApp app = await Firebase.initializeApp(
+  await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
   runApp(const MyApp());
@@ -41,7 +41,6 @@ class SplashScreen extends StatefulWidget{
   State<StatefulWidget> createState() {
  return SplashScreenState();
   }
-
 }
 
 class SplashScreenState extends State<SplashScreen>{
